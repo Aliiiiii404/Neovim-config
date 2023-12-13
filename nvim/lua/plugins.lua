@@ -18,7 +18,7 @@ return require("packer").startup(function(use)
 	-- Colorschema
 	use("rebelot/kanagawa.nvim")
 
-	-- Statusline
+  -- Statusline
 	use({
 		"nvim-lualine/lualine.nvim",
 		event = "BufEnter",
@@ -54,11 +54,6 @@ return require("packer").startup(function(use)
 	})
 
 	use("onsails/lspkind-nvim")
-	use({
-		"L3MON4D3/LuaSnip",
-		-- follow latest release.
-		tag = "v<CurrentMajor>.*",
-	})
 
 	-- cmp: Autocomplete
 	use({
