@@ -12,4 +12,11 @@ This is my current neovim config with some cool features such as :
 
 
 
-
+### Project Structure
+📂 ~/.config/nvim
+├── 📂 lua/
+│	 └── 📂 configs/
+│    └── 🌑 plugins.lua   
+│	 └── 🌑 settings.lua
+│	 └── 🌑 maps.lua
+└── 🌑 init.lua
