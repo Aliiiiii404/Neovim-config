@@ -17,7 +17,7 @@ This is my current neovim config with some cool features such as :
 📂 ~/.config/nvim
 ├── 📂 lua/
 │	 └── 📂 configs/
-│    └── 🌑 plugins.lua   
+│        └── 🌑 plugins.lua   
 │	 └── 🌑 settings.lua
 │	 └── 🌑 maps.lua
 └── 🌑 init.lua
