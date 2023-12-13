@@ -13,6 +13,7 @@ This is my current neovim config with some cool features such as :
 
 
 ### Project Structure
+```plaintext
 📂 ~/.config/nvim
 ├── 📂 lua/
 │	 └── 📂 configs/
@@ -20,3 +21,4 @@ This is my current neovim config with some cool features such as :
 │	 └── 🌑 settings.lua
 │	 └── 🌑 maps.lua
 └── 🌑 init.lua
+```
