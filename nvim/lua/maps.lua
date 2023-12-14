@@ -2,20 +2,8 @@ local function map(mode, lhs, rhs)
 	vim.keymap.set(mode, lhs, rhs, { silent = true })
 end
 
-local status, telescope = pcall(require, "telescope.builtin")
-if status then
-	-- Telescope
-	map("n", "<leader>ff", telescope.find_files)
-	map("n", "<leader>fg", telescope.live_grep)
-	map("n", "<leader>fb", telescope.buffers)
-	map("n", "<leader>fh", telescope.help_tags)
-	map("n", "<leader>fs", telescope.git_status)
-	map("n", "<leader>fc", telescope.git_commits)
-else
-	print("Telescope not found")
-end
-
 -- <leader> = the space key
+-- vim.g.mapleader = " " -- change the " " to your preferred leader key
 
 -- Save
 map("n", "<leader>w", "<CMD>update<CR>")
@@ -26,12 +14,17 @@ map("n", "<leader>q", "<CMD>q<CR>")
 -- Exit insert mode
 map("i", "jk", "<ESC>")
 
--- Go to the end of the line
-map("n", "<leader>e", "$")
+-- Insert mode mappings
+map("i", "<C-e>", "<C-o>$") -- Go to the end of the line in insert mode
+map("i", "<C-b>", "<C-o>0") -- Go to the beginning of the line in insert mode
+map("i", "<C-x>", "<C-o>d") -- Cut in insert mode
+map("i", "<C-c>", "<C-o>y") -- Copy in insert mode
+map("i", "<C-v>", "<C-o>p") -- Paste in insert mode
+map("i", "<C-u>", "<C-o>u") -- Undo in insert mode
 
 -- Windows
-map("n", "<leader>n", "<CMD>vsplit<CR>")
-map("n", "<leader>p", "<CMD>split<CR>")
+map("n", "<leader>p", "<CMD>vsplit<CR>")
+map("n", "<leader>n", "<CMD>split<CR>")
 
 -- NeoTree
 map("n", "<leader>nt", "<CMD>Neotree toggle<CR>")
@@ -44,10 +37,6 @@ map("n", "<S-TAB>", "<CMD>bprevious<CR>")
 -- Terminal
 map("n", "<leader>th", "<CMD>ToggleTerm size=10 direction=horizontal<CR>")
 map("n", "<leader>tv", "<CMD>ToggleTerm size=80 direction=vertical<CR>")
-
--- Markdown Preview
-map("n", "<leader>m", "<CMD>MarkdownPreview<CR>")
-map("n", "<leader>mn", "<CMD>MarkdownPreviewStop<CR>")
 
 -- Window Navigation
 map("n", "<C-h>", "<C-w>h")

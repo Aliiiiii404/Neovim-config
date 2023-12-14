@@ -13,12 +13,12 @@ return require("packer").startup(function(use)
 	use("nvim-lua/plenary.nvim")
 
 	-- Icons
-	use("nvim-tree/nvim-web-devicons")
+	use("kyazdani42/nvim-web-devicons")
 
 	-- Colorschema
 	use("rebelot/kanagawa.nvim")
 
-  -- Statusline
+	-- Statusline
 	use({
 		"nvim-lualine/lualine.nvim",
 		event = "BufEnter",
@@ -33,17 +33,10 @@ return require("packer").startup(function(use)
 		"nvim-treesitter/nvim-treesitter",
 		run = function()
 			require("configs.treesitter")
-    end,
-  })
+		end,
+	})
 
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" })
-
-	-- Telescope
-	use({
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.1",
-		requires = { { "nvim-lua/plenary.nvim" } },
-	})
 
 	-- LSP
 	use({
@@ -77,7 +70,7 @@ return require("packer").startup(function(use)
 		requires = { "nvim-lua/plenary.nvim" },
 	})
 
-	-- Mason: Portable package manager
+	-- Mason: Portable package manager for neovim
 	use({
 		"williamboman/mason.nvim",
 		config = function()
@@ -141,36 +134,6 @@ return require("packer").startup(function(use)
 		"windwp/nvim-autopairs",
 		config = function()
 			require("configs.autopairs")
-    end,
+		end,
 	})
 end)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
