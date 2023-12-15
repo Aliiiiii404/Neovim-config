@@ -6,8 +6,17 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 })
 
 return require("packer").startup(function(use)
-	-- Packer
+	-- Packer plugin manager
 	use("wbthomason/packer.nvim")
+
+	-- Welcome screen alpha-nvim
+	use({
+		"goolord/alpha-nvim",
+		requires = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+			require("alpha").setup(require("alpha.themes.startify").opts)
+		end,
+	})
 
 	-- Common utilities
 	use("nvim-lua/plenary.nvim")
@@ -17,6 +26,9 @@ return require("packer").startup(function(use)
 
 	-- Colorschema
 	use("rebelot/kanagawa.nvim")
+
+	--vim-viual-multi for seing multiple cursors at once
+	use("mg979/vim-visual-multi")
 
 	-- Statusline
 	use({
@@ -35,7 +47,6 @@ return require("packer").startup(function(use)
 			require("configs.treesitter")
 		end,
 	})
-
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" })
 
 	-- LSP
@@ -45,7 +56,6 @@ return require("packer").startup(function(use)
 			require("configs.lsp")
 		end,
 	})
-
 	use("onsails/lspkind-nvim")
 
 	-- cmp: Autocomplete
@@ -56,10 +66,10 @@ return require("packer").startup(function(use)
 			require("configs.cmp")
 		end,
 	})
-
 	use("hrsh7th/cmp-nvim-lsp")
 	use({ "hrsh7th/cmp-path", after = "nvim-cmp" })
 	use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" })
+	use("hrsh7th/cmp-cmdline")
 
 	-- LSP diagnostics, code actions, and more via Lua.
 	use({
@@ -77,7 +87,6 @@ return require("packer").startup(function(use)
 			require("mason").setup()
 		end,
 	})
-
 	use({
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
@@ -95,6 +104,7 @@ return require("packer").startup(function(use)
 			"MunifTanjim/nui.nvim",
 		},
 	})
+	use("nvim-tree/nvim-tree.lua")
 
 	-- Show colors
 	use({
@@ -121,6 +131,9 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	-- tpope commentary
+	use("tpope/vim-commentary")
+
 	-- Markdown Preview
 	use({
 		"iamcco/markdown-preview.nvim",
@@ -128,6 +141,20 @@ return require("packer").startup(function(use)
 			vim.fn["mkdp#util#install"]()
 		end,
 	})
+
+	-- Telescope
+	use({
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.1",
+		requires = {
+			"nvim-lua/popup.nvim",
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope-fzy-native.nvim",
+		},
+	})
+
+	-- FZF - fuzzy file finder
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 
 	-- autopairs
 	use({

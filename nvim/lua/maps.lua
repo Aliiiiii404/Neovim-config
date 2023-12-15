@@ -22,6 +22,10 @@ map("i", "<C-c>", "<C-o>y") -- Copy in insert mode
 map("i", "<C-v>", "<C-o>p") -- Paste in insert mode
 map("i", "<C-u>", "<C-o>u") -- Undo in insert mode
 
+-- keymap for commenting with vim-commentary
+
+map("x", "gc", "<Plug>Commentary")
+
 -- Windows
 map("n", "<leader>p", "<CMD>vsplit<CR>")
 map("n", "<leader>n", "<CMD>split<CR>")
