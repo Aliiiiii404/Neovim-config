@@ -8,8 +8,8 @@ This is my current neovim config with some cool features such as :
  - Windows customization and more.
 
 
-![Image Alt Text](https://github.com/Aliiiiii404/Neovim-config/blob/main/images/neovim-screen.png)
 ![Image Alt Text](https://github.com/Aliiiiii404/Neovim-config/blob/main/images/neovim-alpha.png)
+![Image Alt Text](https://github.com/Aliiiiii404/Neovim-config/blob/main/images/neovim-screen.png)
 
 ### Project Structure
 ```plaintext
