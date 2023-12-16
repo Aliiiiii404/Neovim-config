@@ -1,7 +1,7 @@
 # Neovim config files
 This is my current neovim config with some cool features such as :
  - Autocomplete
- - Theme color (Kanagawa)
+ - Theme color (Kanagawa, tokyonight)
  - Devicons
  - Custom map keybindes 
  - Neotree

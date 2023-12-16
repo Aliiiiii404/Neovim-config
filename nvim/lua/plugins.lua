@@ -24,8 +24,11 @@ return require("packer").startup(function(use)
 	-- Icons
 	use("nvim-tree/nvim-web-devicons")
 
-	-- Colorschema
+	-- Colorschemes
+	---- kanagawa
 	use("rebelot/kanagawa.nvim")
+	---- tokyonight
+	use("folke/tokyonight.nvim")
 
 	--vim-viual-multi for seing multiple cursors at once
 	use("mg979/vim-visual-multi")
@@ -57,6 +60,7 @@ return require("packer").startup(function(use)
 		end,
 	})
 	use("onsails/lspkind-nvim")
+	use({ "L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*" })
 
 	-- cmp: Autocomplete
 	use({
@@ -69,7 +73,6 @@ return require("packer").startup(function(use)
 	use("hrsh7th/cmp-nvim-lsp")
 	use({ "hrsh7th/cmp-path", after = "nvim-cmp" })
 	use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" })
-	use("hrsh7th/cmp-cmdline")
 
 	-- LSP diagnostics, code actions, and more via Lua.
 	use({
@@ -87,6 +90,7 @@ return require("packer").startup(function(use)
 			require("mason").setup()
 		end,
 	})
+
 	use({
 		"williamboman/mason-lspconfig.nvim",
 		config = function()

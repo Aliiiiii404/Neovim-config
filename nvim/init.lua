@@ -2,6 +2,8 @@ require("settings")
 require("plugins")
 require("maps")
 require("nvim-web-devicons").setup({ default = true })
+require("mason").setup()
+require("mason-lspconfig").setup()
 require("telescope").load_extension("fzf")
 require("telescope").setup({
 	extensions = {
@@ -15,10 +17,11 @@ require("telescope").setup({
 	},
 })
 -- Theme
-local themeStatus, kanagawa = pcall(require, "kanagawa")
-
+-- local themeStatus, kanagawa = pcall(require, "kanagawa")
+local themeStatus, tokyonight = pcall(require, "tokyonight")
 if themeStatus then
-	vim.cmd("colorscheme kanagawa")
+	-- vim.cmd("colorscheme kanagawa")
+	vim.cmd("colorscheme tokyonight-night")
 else
 	return
 end
