@@ -25,7 +25,7 @@ map("i", "<C-u>", "<C-o>u") -- Undo in insert mode
 -- keymap for commenting with vim-commentary
 
 map("x", "gc", "<Plug>Commentary")
-
+map("n", "<leader>gc", "<Plug>CommentaryLine")
 -- Windows
 map("n", "<leader>p", "<CMD>vsplit<CR>")
 map("n", "<leader>n", "<CMD>split<CR>")
