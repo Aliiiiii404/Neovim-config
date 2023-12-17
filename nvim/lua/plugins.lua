@@ -22,13 +22,16 @@ return require("packer").startup(function(use)
 	use("nvim-lua/plenary.nvim")
 
 	-- Icons
-	use("nvim-tree/nvim-web-devicons")
+	-- use("nvim-tree/nvim-web-devicons")
+	use("kyazdani42/nvim-web-devicons")
 
 	-- Colorschemes
 	---- kanagawa
 	use("rebelot/kanagawa.nvim")
 	---- tokyonight
 	use("folke/tokyonight.nvim")
+	---- catppuccino
+	use("Pocco81/Catppuccino.nvim")
 
 	--vim-viual-multi for seing multiple cursors at once
 	use("mg979/vim-visual-multi")
@@ -60,7 +63,6 @@ return require("packer").startup(function(use)
 		end,
 	})
 	use("onsails/lspkind-nvim")
-	use({ "L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*" })
 
 	-- cmp: Autocomplete
 	use({
