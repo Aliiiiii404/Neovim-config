@@ -16,12 +16,26 @@ require("telescope").setup({
 		},
 	},
 })
+-- setup for the icons
+require("nvim-web-devicons").setup({
+	default = true,
+	override = {
+		["JetBrainsMono Nerd Font"] = {
+			icon = "",
+			color = "#ffb86c",
+			name = "JetBrainsMono Nerd Font",
+		},
+	},
+})
 -- Theme
 -- local themeStatus, kanagawa = pcall(require, "kanagawa")
 local themeStatus, tokyonight = pcall(require, "tokyonight")
+-- local themeStatus, catppuccin = pcall(require, "catppuccin")
+
 if themeStatus then
 	-- vim.cmd("colorscheme kanagawa")
 	vim.cmd("colorscheme tokyonight-night")
+	-- vim.cmd("colorscheme catppuccin")
 else
 	return
 end
