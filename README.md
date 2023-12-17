@@ -1,8 +1,8 @@
 # Neovim config files
 This is my current neovim config with some cool features such as :
  - Autocomplete
- - Theme color (Kanagawa, tokyonight)
- - Devicons
+ - Theme color (Kanagawa, tokyonight, catppuccin )
+ - Devicons with jetbrains nerd font
  - Custom map keybindes 
  - Neotree
  - Windows customization and more.
