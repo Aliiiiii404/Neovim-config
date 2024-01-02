@@ -7,7 +7,7 @@ This is my current neovim config with some cool features such as :
  - Neotree
  - Windows customization and more.
 
-
+###ScreenShots
 ![Image Alt Text](https://github.com/Aliiiiii404/Neovim-config/blob/main/images/neovim-alpha.png)
 ![Image Alt Text](https://github.com/Aliiiiii404/Neovim-config/blob/main/images/neovim-screen.png)
 
