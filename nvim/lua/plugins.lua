@@ -30,8 +30,8 @@ return require("packer").startup(function(use)
 	use("rebelot/kanagawa.nvim")
 	---- tokyonight
 	use("folke/tokyonight.nvim")
-	---- catppuccino
-	use("Pocco81/Catppuccino.nvim")
+	---- catppuccin
+	use("catppuccin/nvim")
 
 	--vim-viual-multi for seing multiple cursors at once
 	use("mg979/vim-visual-multi")
@@ -55,27 +55,6 @@ return require("packer").startup(function(use)
 	})
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" })
 
-	-- LSP
-	use({
-		"neovim/nvim-lspconfig",
-		config = function()
-			require("configs.lsp")
-		end,
-	})
-	use("onsails/lspkind-nvim")
-
-	-- cmp: Autocomplete
-	use({
-		"hrsh7th/nvim-cmp",
-		event = "InsertEnter",
-		config = function()
-			require("configs.cmp")
-		end,
-	})
-	use("hrsh7th/cmp-nvim-lsp")
-	use({ "hrsh7th/cmp-path", after = "nvim-cmp" })
-	use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" })
-
 	-- LSP diagnostics, code actions, and more via Lua.
 	use({
 		"jose-elias-alvarez/null-ls.nvim",
@@ -88,17 +67,46 @@ return require("packer").startup(function(use)
 	-- Mason: Portable package manager for neovim
 	use({
 		"williamboman/mason.nvim",
-		config = function()
-			require("mason").setup()
-		end,
+		opts = {
+			ensure_installed = {
+				"efm-langserver",
+				"eslint",
+				"prettier",
+				"stylelint",
+				"tailwindcss",
+				"tsserver",
+				"vimls",
+				"yamlls",
+				"gopls",
+				"html",
+				"json",
+				"lua",
+				"python",
+				"rust",
+				"clangd",
+			},
+		},
 	})
 
+	-- LSP
+	use({ "onsails/lspkind-nvim" })
 	use({
-		"williamboman/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig",
 		config = function()
-			require("configs.mason-lsp")
+			require("configs.lspconfig")
 		end,
 	})
+	-- CMP
+	use({
+		"hrsh7th/nvim-cmp",
+		event = "InsertEnter",
+		config = function()
+			require("configs.cmp")
+		end,
+	})
+	use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" })
+	use({ "hrsh7th/cmp-nvim-lsp" })
+	use({ "hrsh7th/cmp-path", after = "nvim-cmp" })
 
 	-- File manager
 	use({
@@ -147,20 +155,6 @@ return require("packer").startup(function(use)
 			vim.fn["mkdp#util#install"]()
 		end,
 	})
-
-	-- Telescope
-	use({
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.1",
-		requires = {
-			"nvim-lua/popup.nvim",
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope-fzy-native.nvim",
-		},
-	})
-
-	-- FZF - fuzzy file finder
-	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 
 	-- autopairs
 	use({
