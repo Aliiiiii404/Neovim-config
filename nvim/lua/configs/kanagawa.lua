@@ -20,5 +20,11 @@ kanagawa.setup({
 	terminalColors = true, -- define vim.g.terminal_color_{0,17}
 	colors = {},
 	overrides = {},
-	theme = "default", -- Load "default" theme or the experimental "light" theme
+	theme = "wave", -- Load "default" theme or the experimental "light" theme
+	background = {
+		dark = "wave",
+		light = "lotus",
+	},
 })
+
+vim.cmd.colorscheme("kanagawa")

@@ -18,23 +18,14 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	-- Common utilities
-	use("nvim-lua/plenary.nvim")
-
 	-- Icons
-	-- use("nvim-tree/nvim-web-devicons")
 	use("kyazdani42/nvim-web-devicons")
 
 	-- Colorschemes
-	---- kanagawa
-	use("rebelot/kanagawa.nvim")
 	---- tokyonight
 	use("folke/tokyonight.nvim")
 	---- catppuccin
 	use("catppuccin/nvim")
-
-	--vim-viual-multi for seing multiple cursors at once
-	use("mg979/vim-visual-multi")
 
 	-- Statusline
 	use({
@@ -55,59 +46,6 @@ return require("packer").startup(function(use)
 	})
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" })
 
-	-- LSP diagnostics, code actions, and more via Lua.
-	use({
-		"jose-elias-alvarez/null-ls.nvim",
-		config = function()
-			require("configs.null-ls")
-		end,
-		requires = { "nvim-lua/plenary.nvim" },
-	})
-
-	-- Mason: Portable package manager for neovim
-	use({
-		"williamboman/mason.nvim",
-		opts = {
-			ensure_installed = {
-				"efm-langserver",
-				"eslint",
-				"prettier",
-				"stylelint",
-				"tailwindcss",
-				"tsserver",
-				"vimls",
-				"yamlls",
-				"gopls",
-				"html",
-				"json",
-				"lua",
-				"python",
-				"rust",
-				"clangd",
-			},
-		},
-	})
-
-	-- LSP
-	use({ "onsails/lspkind-nvim" })
-	use({
-		"neovim/nvim-lspconfig",
-		config = function()
-			require("configs.lspconfig")
-		end,
-	})
-	-- CMP
-	use({
-		"hrsh7th/nvim-cmp",
-		event = "InsertEnter",
-		config = function()
-			require("configs.cmp")
-		end,
-	})
-	use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" })
-	use({ "hrsh7th/cmp-nvim-lsp" })
-	use({ "hrsh7th/cmp-path", after = "nvim-cmp" })
-
 	-- File manager
 	use({
 		"nvim-neo-tree/neo-tree.nvim",
@@ -120,7 +58,7 @@ return require("packer").startup(function(use)
 	})
 	use("nvim-tree/nvim-tree.lua")
 
-	-- Show colors
+	-- Show colors in css code like : #ffffff
 	use({
 		"norcalli/nvim-colorizer.lua",
 		config = function()
@@ -128,7 +66,7 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	-- Terminal
+	-- toggle terminal
 	use({
 		"akinsho/toggleterm.nvim",
 		tag = "*",
@@ -145,22 +83,24 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	-- tpope commentary
+	-- to comment code easily using spacebar + gc in visual mode
 	use("tpope/vim-commentary")
-
-	-- Markdown Preview
-	use({
-		"iamcco/markdown-preview.nvim",
-		run = function()
-			vim.fn["mkdp#util#install"]()
-		end,
-	})
 
 	-- autopairs
 	use({
 		"windwp/nvim-autopairs",
 		config = function()
-			require("configs.autopairs")
+			require("nvim-autopairs").setup({})
 		end,
 	})
+
+	-- null-ls for code formatting
+	use({
+		"jose-elias-alvarez/null-ls.nvim",
+		config = function()
+			require("configs.null-ls")
+		end,
+		requires = { "nvim-lua/plenary.nvim" },
+	})
+	--end of the function
 end)
