@@ -5,6 +5,7 @@ require("maps")
 -- the configuration files
 require("configs.lsp-config")
 require("configs.treesitter")
+require("configs.telescope")
 require("configs.toggleterm")
 require("configs.gitsigns")
 require("configs.null-ls")
