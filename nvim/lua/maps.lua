@@ -1,7 +1,6 @@
 local function map(mode, lhs, rhs)
 	vim.keymap.set(mode, lhs, rhs, { silent = true })
 end
-
 -- <leader> = the space key
 -- vim.g.mapleader = " " -- change the " " to your preferred leader key
 
@@ -34,6 +33,7 @@ map("n", "<leader>n", "<CMD>split<CR>")
 map("n", "<leader>nt", "<CMD>Neotree toggle<CR>")
 map("n", "<leader>nf", "<CMD>Neotree focus<CR>")
 
+-- Telescope : see the telescope.lua file in the configs folder
 -- Buffer
 map("n", "<TAB>", "<CMD>bnext<CR>")
 map("n", "<S-TAB>", "<CMD>bprevious<CR>")
