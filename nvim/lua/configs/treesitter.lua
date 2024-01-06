@@ -18,6 +18,8 @@ ts.setup({
 		"typescript",
 		"javascript",
 		"toml",
+		"c",
+		"python",
 		"c_sharp",
 		"json",
 		"yaml",
@@ -26,6 +28,8 @@ ts.setup({
 		"html",
 		"lua",
 	},
+	sync_install = false,
+	auto_install = true,
 	rainbow = {
 		enable = true,
 		disable = { "html" },
