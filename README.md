@@ -4,13 +4,13 @@ This is my current neovim config with [packer](https://github.com/wbthomason/pac
 ### ScreenShots
 ![Image Alt Text](https://github.com/Aliiiiii404/Neovim-config/blob/main/screenshots/neovim-alpha.png)
 ![Image Alt Text](https://github.com/Aliiiiii404/Neovim-config/blob/main/screenshots/neovim-screen.png)
-
+![Image Alt Text](https://github.com/Aliiiiii404/Neovim-config/blob/main/screenshots/telescope.png)
 ### Project Structure
 ```plaintext
 📂 ~/.config/nvim
 ├── 📂 lua/
 │	 └── 📂 configs/
-│    └── 🌑 plugins.lua   
+│       └── 🌑 plugins.lua   
 │	 └── 🌑 settings.lua
 │	 └── 🌑 maps.lua
 └── 🌑 init.lua
