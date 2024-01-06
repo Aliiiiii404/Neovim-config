@@ -1,13 +1,11 @@
 local global = vim.g
 local o = vim.o
 
--- Map <leader> = the space key
-
+-- mapleader (see maps.lua for keymaps)
 global.mapleader = " "
 global.maplocalleader = " "
 
 -- Editor options
-
 o.number = true
 o.relativenumber = true
 o.clipboard = "unnamedplus"
@@ -29,3 +27,5 @@ o.showmatch = true
 o.inccommand = "split"
 o.splitbelow = "splitright"
 o.termguicolors = true
+o.winminheight = 0
+o.winminwidth = 0
