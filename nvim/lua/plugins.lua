@@ -4,7 +4,6 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 	pattern = "plugins.lua",
 	command = "source <afile> | PackerCompile",
 })
-
 return require("packer").startup(function(use)
 	-- Packer plugin manager
 	use("wbthomason/packer.nvim")
@@ -22,6 +21,8 @@ return require("packer").startup(function(use)
 	use("kyazdani42/nvim-web-devicons")
 
 	-- Colorschemes
+	---- kanagawa
+	use("rebelot/kanagawa.nvim")
 	---- tokyonight
 	use("folke/tokyonight.nvim")
 	---- catppuccin
@@ -36,12 +37,15 @@ return require("packer").startup(function(use)
 		end,
 		requires = { "nvim-web-devicons" },
 	})
+
 	--LSP and error messages
 	use({
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",
 	})
+	--compe for autocompletion suggestions (works with LSP)
+	use("hrsh7th/nvim-compe")
 
 	-- Telescope
 	use({
@@ -50,6 +54,7 @@ return require("packer").startup(function(use)
 		-- or                            , branch = '0.1.x',
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
+
 	-- Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
@@ -115,5 +120,7 @@ return require("packer").startup(function(use)
 		end,
 		requires = { "nvim-lua/plenary.nvim" },
 	})
+	use({ "mhartington/formatter.nvim" })
+
 	--end of the function
 end)

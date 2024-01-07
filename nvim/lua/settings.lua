@@ -29,3 +29,4 @@ o.splitbelow = "splitright"
 o.termguicolors = true
 o.winminheight = 0
 o.winminwidth = 0
+o.completeopt = "menuone,noselect"
