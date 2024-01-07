@@ -15,3 +15,4 @@ require("nvim-web-devicons").setup({ default = true })
 -- Themes : uncomment the theme you want to use and comment the others
 require("configs.catppuccin")
 --require("configs.tokyonight")
+--require("configs.kanagawa")
