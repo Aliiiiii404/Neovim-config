@@ -33,7 +33,7 @@ map("n", "<leader>n", "<CMD>split<CR>")
 map("n", "<leader>nt", "<CMD>Neotree toggle<CR>")
 map("n", "<leader>nf", "<CMD>Neotree focus<CR>")
 
--- Telescope : see the telescope.lua file in the configs folder
+-- Telescope : see the configs/telescope.lua file
 -- Buffer
 map("n", "<TAB>", "<CMD>bnext<CR>")
 map("n", "<S-TAB>", "<CMD>bprevious<CR>")
