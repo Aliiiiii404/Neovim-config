@@ -1,6 +1,5 @@
 local global = vim.g
 local o = vim.o
-
 -- mapleader (see maps.lua for keymaps)
 global.mapleader = " "
 global.maplocalleader = " "
@@ -29,4 +28,3 @@ o.splitbelow = "splitright"
 o.termguicolors = true
 o.winminheight = 0
 o.winminwidth = 0
-o.completeopt = "menuone,noselect"
