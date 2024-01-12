@@ -98,6 +98,16 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	-- Wich key
+	use({
+		"folke/which-key.nvim",
+		config = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+			require("which-key").setup({})
+		end,
+	})
+
 	-- Git
 	use({
 		"lewis6991/gitsigns.nvim",
