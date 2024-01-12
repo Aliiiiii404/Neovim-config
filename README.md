@@ -5,9 +5,7 @@ This is my current neovim config with [packer](https://github.com/wbthomason/pac
 ### ScreenShots
 
 ![Image Alt Text](https://github.com/Aliiiiii404/Neovim-config/blob/main/screenshots/neovim-alpha.png)
-
-![Image Alt Text](https://github.com/Aliiiiii404/Neovim-config/blob/main/screenshots/neovim-screen.png)
-
+![Image Alt Text](https://github.com/Aliiiiii404/Neovim-config/blob/main/screenshots/cmp-screen.png)
 ![Image Alt Text](https://github.com/Aliiiiii404/Neovim-config/blob/main/screenshots/telescope.png)
 
 ### Installation
@@ -20,17 +18,14 @@ rm -rf ~/.local/share/nvim
 git clone --depth 1 https://github.com/Aliiiiii404/Neovim-config
 mv Neovim-config/nvim ~/.config/
 ```
-##### install packer : 
-```bash
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-```
-##### run nvim :
+
+##### run nvim:
 
 ```bash
 nvim
 ```
-##### run this inside nvim to install all the plugins using packer :
+
+##### run this inside nvim to install all the plugins :
 
 ```bash
 :PackerSync
