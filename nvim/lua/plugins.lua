@@ -44,14 +44,19 @@ return require("packer").startup(function(use)
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",
 	})
-	--compe for autocompletion suggestions (works with LSP)
-	use("hrsh7th/nvim-compe")
+
+	--cmp for autocompletion and snippet completions (works with LSP)
+	use("hrsh7th/nvim-cmp")
+	use("hrsh7th/cmp-buffer")
+	use("hrsh7th/cmp-path")
+	use("hrsh7th/cmp-cmdline")
+	use("saadparwaiz1/cmp_luasnip")
+	use("hrsh7th/cmp-nvim-lsp")
 
 	-- Telescope
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.5",
-		-- or                            , branch = '0.1.x',
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
