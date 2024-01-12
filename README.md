@@ -64,4 +64,5 @@ nvim
 - [https://github.com/windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
 - [https://github.com/jose-elias-alvarez/null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
 - [https://github.com/mhartington/formatter.nvim](https://github.com/mhartington/formatter.nvim)
+- [https://github.com/folke/which-key.nvim](https://github.com/folke/which-key.nvim)
 
