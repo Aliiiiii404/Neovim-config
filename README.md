@@ -18,14 +18,19 @@ rm -rf ~/.local/share/nvim
 git clone --depth 1 https://github.com/Aliiiiii404/Neovim-config
 mv Neovim-config/nvim ~/.config/
 ```
+##### install packer :
 
+```bash
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
 ##### run nvim:
 
 ```bash
 nvim
 ```
 
-##### run this inside nvim to install all the plugins :
+##### run this inside nvim to install all the plugins using packer :
 
 ```bash
 :PackerSync
