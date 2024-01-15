@@ -70,4 +70,5 @@ nvim
 - [https://github.com/jose-elias-alvarez/null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
 - [https://github.com/mhartington/formatter.nvim](https://github.com/mhartington/formatter.nvim)
 - [https://github.com/folke/which-key.nvim](https://github.com/folke/which-key.nvim)
+- [https://github.com/folke/noice.nvim](https://github.com/folke/noice.nvim)
 
