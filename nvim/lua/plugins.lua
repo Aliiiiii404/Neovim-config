@@ -52,6 +52,7 @@ return require("packer").startup(function(use)
 	use("hrsh7th/cmp-cmdline")
 	use("saadparwaiz1/cmp_luasnip")
 	use("hrsh7th/cmp-nvim-lsp")
+	use("L3MON4D3/LuaSnip")
 
 	-- Telescope
 	use({
@@ -60,13 +61,16 @@ return require("packer").startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
-	-- noice
+	-- noice of notifications, cmdline and popupmenu
 	use({
 		"folke/noice.nvim",
 		config = function()
 			require("noice").setup()
 		end,
 	})
+	use("rcarriga/nvim-notify")
+	use("MunifTanjim/nui.nvim")
+
 	-- Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
@@ -123,7 +127,7 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	-- to comment code easily using spacebar + gc in visual mode
+	-- to comment code easily using leader + gc in visual mode
 	use("tpope/vim-commentary")
 
 	-- autopairs
