@@ -9,6 +9,9 @@ require("configs.telescope")
 require("configs.toggleterm")
 require("configs.gitsigns")
 require("configs.null-ls")
+require("configs.ibl")
+require("colorizer").setup()
+
 -- setup for the icons
 require("nvim-web-devicons").setup({ default = true })
 
