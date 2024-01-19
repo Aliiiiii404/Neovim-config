@@ -58,4 +58,5 @@ nvim
 - [https://github.com/mhartington/formatter.nvim](https://github.com/mhartington/formatter.nvim)
 - [https://github.com/folke/which-key.nvim](https://github.com/folke/which-key.nvim)
 - [https://github.com/folke/noice.nvim](https://github.com/folke/noice.nvim)
-
+- [https://github.com/lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
+- [https://github.com/folke/flash.nvim](https://github.com/folke/flash.nvim)
