@@ -1,168 +1,218 @@
 -- Lazy.nvim plugin manager setup
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
-		lazypath,
-	})
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
 vim.opt.rtp:prepend(lazypath)
 
 return require("lazy").setup({
-	-- Welcome screen alpha-nvim
-	{
-		"goolord/alpha-nvim",
-		requires = { "nvim-tree/nvim-web-devicons" },
-		config = function()
-			require("alpha").setup(require("alpha.themes.startify").opts)
-		end,
-	},
 
-	-- Icons
-	"kyazdani42/nvim-web-devicons",
+  -- welcome screen alpha-nvim
+  {
+    "goolord/alpha-nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("alpha").setup(require("alpha.themes.startify").config)
+    end,
+  },
 
-	-- Colorschemes
-	---- kanagawa
-	"rebelot/kanagawa.nvim",
-	---- tokyonight
-	{
-		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {},
-	},
-	---- catppuccin
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
-	},
+  -- icons
+  "nvim-tree/nvim-web-devicons",
 
-	-- Statusline : the line at the bottom of the screen that shows mode, file name, etc.
-	{
-		"nvim-lualine/lualine.nvim",
-		config = function()
-			require("configs.lualine")
-		end,
-		dependencies = { "nvim-web-devicons" },
-	},
+  -- colorschemes
+  ---- kanagawa
+  "rebelot/kanagawa.nvim",
+  ---- tokyonight
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+  ---- catppuccin
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+  },
 
-	--LSP and error messages
-	{
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
-		"neovim/nvim-lspconfig",
-	},
+  --  indent-blankline for scpoe indecator
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl",             opts = {} },
 
-	--cmp for autocompletion and snippet completions (works with LSP)
-	"hrsh7th/nvim-cmp",
-	"hrsh7th/cmp-buffer",
-	"hrsh7th/cmp-path",
-	"hrsh7th/cmp-cmdline",
-	"saadparwaiz1/cmp_luasnip",
-	"hrsh7th/cmp-nvim-lsp",
-	"L3MON4D3/LuaSnip",
+  -- statusline : the line at the bottom of the screen that shows mode, file name, etc.
+  {
+    "nvim-lualine/lualine.nvim",
+    config = function()
+      require("configs.lualine")
+    end,
+    dependencies = { "nvim-web-devicons" },
+  },
 
-	-- Telescope
-	{
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.5",
-		dependencies = { "nvim-lua/plenary.nvim" },
-	},
+  --lsp and error messages
+  {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  },
 
-	-- noice of notifications, cmdline and popupmenu
-	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
-		opts = {},
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
-		},
-	},
+  --cmp for autocompletion and snippet completions (works with lsp)
+  "hrsh7th/nvim-cmp",
+  "hrsh7th/cmp-buffer",
+  "hrsh7th/cmp-path",
+  "hrsh7th/cmp-cmdline",
+  "saadparwaiz1/cmp_luasnip",
+  "hrsh7th/cmp-nvim-lsp",
+  "l3mon4d3/luasnip",
 
-	-- Treesitter
-	{
-		"nvim-treesitter/nvim-treesitter",
-		run = function()
-			require("configs.treesitter")
-		end,
-	},
-	{ "windwp/nvim-ts-autotag", after = "nvim-treesitter" },
+  -- telescope
+  {
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.5",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
 
-	-- File manager
-	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v3.x",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-			"MunifTanjim/nui.nvim",
-			-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
-		},
-	},
+  -- noice of notifications, cmdline and popupmenu
+  {
+    "folke/noice.nvim",
+    opts = {},
+    dependencies = {
+      "muniftanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
+  },
 
-	-- Show colors in css code like : #ffffff
-	{
-		"norcalli/nvim-colorizer.lua",
-	},
+  -- treesitter
+  {
+    "nvim-treesitter/nvim-treesitter",
+    run = function()
+      require("configs.treesitter")
+    end,
+  },
+  { "windwp/nvim-ts-autotag",              after = "nvim-treesitter" },
 
-	-- toggle terminal
-	{
-		"akinsho/toggleterm.nvim",
-		version = "*",
-		opts = {
-			function()
-				require("configs.toggleterm")
-			end,
-		},
-	},
+  -- file manager
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "muniftanjim/nui.nvim",
+    },
+  },
 
-	-- Wich key
-	{
-		"folke/which-key.nvim",
-		event = "VeryLazy",
-		init = function()
-			vim.o.timeout = true
-			vim.o.timeoutlen = 300
-		end,
-		opts = {
-			-- your configuration comes here
-			-- or leave it empty to use the default settings
-		},
-	},
+  -- flash for fast navigation
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    opts = {},
+    keys = {
+      {
+        "s",
+        mode = { "n", "x", "o" },
+        function()
+          require("flash").jump()
+        end,
+        desc = "flash",
+      },
+      {
+        "s",
+        mode = { "n", "x", "o" },
+        function()
+          require("flash").treesitter()
+        end,
+        desc = "flash treesitter",
+      },
+      {
+        "r",
+        mode = "o",
+        function()
+          require("flash").remote()
+        end,
+        desc = "remote flash",
+      },
+      {
+        "r",
+        mode = { "o", "x" },
+        function()
+          require("flash").treesitter_search()
+        end,
+        desc = "treesitter search",
+      },
+      {
+        "<c-s>",
+        mode = { "c" },
+        function()
+          require("flash").toggle()
+        end,
+        desc = "toggle flash search",
+      },
+    },
+  },
 
-	-- Git
-	{
-		"lewis6991/gitsigns.nvim",
-		config = function()
-			require("configs.gitsigns")
-		end,
-	},
+  -- show colors in css code like : #ffffff
+  {
+    "norcalli/nvim-colorizer.lua",
+  },
 
-	-- to comment code easily using leader + gc in visual mode
-	{ "tpope/vim-commentary" },
+  -- toggle terminal
+  {
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    opts = {
+      function()
+        require("configs.toggleterm")
+      end,
+    },
+  },
 
-	-- autopairs
-	{
-		"windwp/nvim-autopairs",
-		event = "InsertEnter",
-		opts = {},
-	},
+  -- wich key
+  {
+    "folke/which-key.nvim",
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+    },
+  },
 
-	-- null-ls for code formatting
-	{
-		"jose-elias-alvarez/null-ls.nvim",
-		config = function()
-			require("configs.null-ls")
-		end,
-		requires = { "nvim-lua/plenary.nvim" },
-	},
-	{ "mhartington/formatter.nvim" },
+  -- git
+  {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("configs.gitsigns")
+    end,
+  },
 
-	--end of lazy setup
+  -- to comment code easily using leader + gc in visual mode
+  { "tpope/vim-commentary" },
+
+  -- autopairs
+  {
+    "windwp/nvim-autopairs",
+    event = "insertenter",
+    opts = {},
+  },
+
+  -- null-ls for code formatting
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    config = function()
+      require("configs.null-ls")
+    end,
+    requires = { "nvim-lua/plenary.nvim" },
+  },
+  { "mhartington/formatter.nvim" },
+
+  --end of lazy setup
 })
