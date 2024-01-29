@@ -1,9 +1,7 @@
 local function map(mode, lhs, rhs)
-	vim.keymap.set(mode, lhs, rhs, { silent = true })
+  vim.keymap.set(mode, lhs, rhs, { silent = true })
 end
--- <leader> = the space key
--- vim.g.mapleader = " " -- change the " " to your preferred leader key
-
+-- <leader> = the space key, change it in the settings.lua file
 -- Save
 map("n", "<leader>w", "<CMD>update<CR>")
 
