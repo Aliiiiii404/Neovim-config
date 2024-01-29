@@ -14,8 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 
 return require("lazy").setup({
 
-  -- uncomment this if you use github copilot and change the path if you're not on linux
-  -- { dir = "~/.config/nvim/pack/github/start/copilot.vim" },
+  -- uncomment this if you use github copilot or change the path if you're not on linux
+  { dir = "~/.config/nvim/pack/github/start/copilot.vim" },
 
   -- welcome screen
   {
@@ -46,7 +46,7 @@ return require("lazy").setup({
   },
 
   --  indent-blankline for scpoe indecator
-  { "lukas-reineke/indent-blankline.nvim", main = "ibl",             opts = {} },
+  { "lukas-reineke/indent-blankline.nvim",               main = "ibl", opts = {} },
 
   -- statusline : the line at the bottom of the screen that shows mode, file name, etc.
   {
@@ -97,7 +97,7 @@ return require("lazy").setup({
       require("configs.treesitter")
     end,
   },
-  { "windwp/nvim-ts-autotag",              after = "nvim-treesitter" },
+  { "windwp/nvim-ts-autotag", after = "nvim-treesitter" },
 
   -- file manager
   {
