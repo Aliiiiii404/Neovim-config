@@ -14,7 +14,10 @@ vim.opt.rtp:prepend(lazypath)
 
 return require("lazy").setup({
 
-  -- welcome screen alpha-nvim
+  -- uncomment this if you use github copilot and change the path if you're not on linux
+  -- { dir = "~/.config/nvim/pack/github/start/copilot.vim" },
+
+  -- welcome screen
   {
     "goolord/alpha-nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -22,7 +25,6 @@ return require("lazy").setup({
       require("alpha").setup(require("alpha.themes.startify").config)
     end,
   },
-
   -- icons
   "nvim-tree/nvim-web-devicons",
 
@@ -55,7 +57,7 @@ return require("lazy").setup({
     dependencies = { "nvim-web-devicons" },
   },
 
-  --lsp and error messages
+  -- mason lsp manager
   {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
@@ -200,8 +202,8 @@ return require("lazy").setup({
   -- autopairs
   {
     "windwp/nvim-autopairs",
-    event = "insertenter",
-    opts = {},
+    event = "InsertEnter",
+    opts = {}, -- this is equalent to setup({}) function
   },
 
   -- null-ls for code formatting
