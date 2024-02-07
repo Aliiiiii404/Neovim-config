@@ -206,6 +206,18 @@ return require("lazy").setup({
     opts = {}, -- this is equalent to setup({}) function
   },
 
+  -- to open big files
+  {
+    "LunarVim/bigfile.nvim",
+    event = "BufReadPre",
+    opts = {
+      filesize = 2, -- MB
+    },
+    config = function(_, opts)
+      require("bigfile").setup(opts)
+    end,
+  },
+
   -- null-ls for code formatting
   {
     "jose-elias-alvarez/null-ls.nvim",
