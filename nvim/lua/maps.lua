@@ -1,7 +1,9 @@
 local function map(mode, lhs, rhs)
   vim.keymap.set(mode, lhs, rhs, { silent = true })
 end
--- <leader> = the space key, change it in the settings.lua file
+-- <leader> = the space key
+-- vim.g.mapleader = " " -- change the " " to your preferred leader key
+
 -- Save
 map("n", "<leader>w", "<CMD>update<CR>")
 
@@ -39,6 +41,9 @@ map("n", "<S-TAB>", "<CMD>bprevious<CR>")
 -- Terminal
 map("n", "<leader>th", "<CMD>ToggleTerm size=10 direction=horizontal<CR>")
 map("n", "<leader>tv", "<CMD>ToggleTerm size=80 direction=vertical<CR>")
+
+-- dismiss notifications
+map("n", "<leader>dn", "<CMD>NoiceDismiss<CR>")
 
 -- Window Navigation
 map("n", "<C-h>", "<C-w>h")
